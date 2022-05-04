@@ -1,11 +1,11 @@
 const worker = ('serial' in navigator) ? new Worker(import.meta.url.replace(/\/[^/]*$/u, '/serial_worker.js'), {type: 'module'}) : null;
 
 class MIDIPort extends EventTarget {
-	constructor(id, name) {
+	constructor(id, properties) {
 		super();
 
 		this.id = id;
-		this.name = name;
+		this.name = properties?.name ?? id;
 		this.manufacturer = 'web-serial-midi';
 		this.version = '0.1.0';
 		this.state = 'disconnected';
@@ -110,8 +110,8 @@ class MIDIPort extends EventTarget {
 }
 
 class MIDIOutput extends MIDIPort {
-	constructor(id, name) {
-		super(id, name);
+	constructor(id, properties) {
+		super(id, properties);
 
 		this.type = 'output';
 	}
@@ -254,7 +254,7 @@ export async function requestMIDIAccess(options = {}) {
 		midiAccess = new MIDIAccess(options);
 
 		// Adds a default MIDI port.
-		midiAccess._addPort(new MIDIOutput('serial-midi-out', 'Serial MIDI Out'));
+		midiAccess._addPort(new MIDIOutput('serial-midi-out', {name: 'Serial MIDI Out'}));
 
 		// Waits for preparation of serial port.
 		await new Promise((resolve) => {
