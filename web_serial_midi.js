@@ -1,11 +1,16 @@
 const worker = ('serial' in navigator) ? new Worker(import.meta.url.replace(/\/[^/]*$/u, '/serial_worker.js'), {type: 'module'}) : null;
 
 class MIDIPort extends EventTarget {
-	constructor(id, properties) {
+	constructor(properties) {
 		super();
 
-		this.id = id;
-		this.name = properties?.name ?? id;
+		this._portIndex  = properties?.portIndex  ??  0;
+		this._portPrefix = properties?.portPrefix ?? -1;
+
+		const type = (this instanceof MIDIOutput) ? 'out' : 'in';
+
+		this.id = `serial-midi-${type}${(this._portPrefix >= 0) ? `-${String.fromCharCode(0x61 + this._portIndex)}-${this._portPrefix}` : ''}`;
+		this.name = properties?.name ?? this.id;
 		this.manufacturer = 'web-serial-midi';
 		this.version = '0.1.0';
 		this.state = 'disconnected';
@@ -110,8 +115,8 @@ class MIDIPort extends EventTarget {
 }
 
 class MIDIOutput extends MIDIPort {
-	constructor(id, properties) {
-		super(id, properties);
+	constructor(properties) {
+		super(properties);
 
 		this.type = 'output';
 	}
@@ -146,7 +151,7 @@ class MIDIOutput extends MIDIPort {
 			throw new TypeError('Invalid data');
 		}
 
-		worker.postMessage({kind: 'MIDIOutput_send', bytes, timestamp});
+		worker.postMessage({kind: 'MIDIOutput_send', bytes, timestamp, portPrefix: this._portPrefix});
 	}
 
 	clear() {
@@ -254,7 +259,10 @@ export async function requestMIDIAccess(options = {}) {
 		midiAccess = new MIDIAccess(options);
 
 		// Adds a default MIDI port.
-		midiAccess._addPort(new MIDIOutput('serial-midi-out', {name: 'Serial MIDI Out'}));
+		midiAccess._addPort(new MIDIOutput({name: `Serial MIDI Out`}));
+		for (let i = 0; i < 5; i++) {
+			midiAccess._addPort(new MIDIOutput({name: `Serial MIDI Out (Port-${String.fromCharCode(0x41 + i)})`, portIndex: i, portPrefix: i + 1}));
+		}
 
 		// Waits for preparation of serial port.
 		await new Promise((resolve) => {

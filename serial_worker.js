@@ -6,12 +6,13 @@ const sender = (() => {
 	let isActivate = false;
 	let timerId = 0;
 	let midiEvents = [];
+	let lastPortPrefix = -1;
 	let tmpBuf = new Uint8Array(65536);
 	let writer;
 
-	function pushMidiEvents(bytes, timestamp) {
+	function pushMidiEvents(bytes, timestamp, portPrefix) {
 		console.assert(bytes instanceof Uint8Array && Number.isFinite(timestamp));
-		midiEvents.push({bytes, timestamp});
+		midiEvents.push({bytes, timestamp, portPrefix});
 	}
 
 	function startLoop() {
@@ -24,6 +25,8 @@ const sender = (() => {
 
 		timerId = setTimeout(mainLoop, 0);
 		isActivate = true;
+
+		lastPortPrefix = -1;
 	}
 
 	function stopLoop() {
@@ -91,11 +94,18 @@ const sender = (() => {
 						break;
 					}
 
+					// Adds "F5h pp" event to switch the port for sending.
+					if (event.portPrefix !== lastPortPrefix) {
+						tmpBuf.set([0xf5, event.portPrefix], byteLength);
+						byteLength += 2;
+					}
+
 					// Copies the midi message bytes to the buffer.
 					tmpBuf.set(event.bytes, byteLength);
 					byteLength += event.bytes.byteLength;
 
 					event.isSent = true;
+					lastPortPrefix = event.portPrefix;
 				}
 
 				// Writes the data to serial port.
@@ -178,7 +188,7 @@ self.addEventListener('message', async (e) => {
 		break;
 
 	case 'MIDIOutput_send':
-		sender.pushMidiEvents(args.bytes, args.timestamp);
+		sender.pushMidiEvents(args.bytes, args.timestamp, args.portPrefix);
 		break;
 
 	default:
