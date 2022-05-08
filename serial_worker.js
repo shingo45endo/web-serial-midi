@@ -134,6 +134,91 @@ const sender = (() => {
 	};
 })();
 
+const receiver = (() => {
+	let isActivate = false;
+	let timerId = 0;
+	let reader;
+
+	function startLoop() {
+		stopLoop();
+
+		if (!serialPort?.readable) {
+			console.error('Cannot begin the MIDI In loop.');
+			return;
+		}
+
+		timerId = setTimeout(mainLoop, 0);
+		isActivate = true;
+	}
+
+	function stopLoop() {
+		if (timerId !== 0) {
+			clearTimeout(timerId);
+			timerId = 0;
+		}
+		isActivate = false;
+	}
+
+	async function closeReader() {
+		if (reader) {
+			await reader.cancel().catch((e) => console.warn(e));	// Ignores error.
+			reader.releaseLock();
+		}
+	}
+
+	function mainLoop() {
+		timerId = 0;
+
+		if (!isActivate) {
+			return;
+		}
+
+		if (!serialPort?.readable) {
+			reader = null;
+			notifySerialUnavailable();
+			return;
+		}
+
+		(async () => {
+			try {
+				// Makes a reader if necessary.
+				if (!reader) {
+					reader = serialPort.readable.getReader();
+				}
+				console.assert(reader);
+
+				// Reads data from serial port.
+				const {value: bytes, done: isDone} = await reader.read();
+				if (bytes) {
+					self.postMessage({kind: 'notifySerialReadData', bytes});
+				}
+
+				// Triggers next loop.
+				if (!isDone) {
+					timerId = setTimeout(mainLoop, 0);
+				}
+
+			} catch (error) {
+				reader = null;
+				if (!serialPort?.readable) {
+					// If the error is fatal, exits the loop.
+					console.error(error);
+					notifySerialUnavailable();
+				} else {
+					// If the error seems to be recovered, triggers next loop.
+					timerId = setTimeout(mainLoop, 0);
+				}
+			}
+		})();
+	}
+
+	return {
+		startLoop,
+		stopLoop,
+		closeReader,
+	};
+})();
+
 const portSettings = (() => {
 	let serialPortInfo;
 	let serialOptions;
@@ -168,8 +253,6 @@ navigator.serial.addEventListener('connect', async (e) => {
 });
 
 navigator.serial.addEventListener('disconnect', async (e) => {
-	console.assert(serialPort);
-
 	// if the disconnected port is the current port chosen by requestPort(), notifies disconnection.
 	if (e.target === serialPort) {
 		notifySerialUnavailable();
@@ -218,12 +301,16 @@ async function prepareForSerialPort(portInfo, options) {
 async function openPort() {
 	await serialPort.open(portSettings.getCurrentSettings());
 	sender.startLoop();
+	receiver.startLoop();
 	notifySerialAvailable();
 }
 
 async function closePort() {
 	notifySerialUnavailable();
-	await sender.closeWriter().catch((e) => console.warn(e));	// Ignores error.
+	await Promise.allSettled([
+		sender.closeWriter().catch((e) => console.warn(e)),	// Ignores error.
+		receiver.closeReader().catch((e) => console.warn(e)),	// Ignores error.
+	]);
 	if (serialPort) {
 		await serialPort.close().catch(() => {/*EMPTY*/});	// Ignores error.
 	}
