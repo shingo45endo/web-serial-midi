@@ -197,7 +197,6 @@ class MIDIAccess extends EventTarget {
 
 		// Adds the reference to MIDI Access.
 		port._midiAccess = this;
-
 	}
 
 	_removePort(port) {
@@ -222,6 +221,16 @@ class MIDIAccess extends EventTarget {
 
 		// Removes the reference to MIDI Access.
 		port._midiAccess = null;
+	}
+
+	async _connectAllPorts() {
+		await Promise.allSettled([...this._allPorts.values()].filter((port) => port._midiAccess).map((port) => port._connect()));
+		[...this._allPorts.values()].filter((port) => !port._midiAccess).forEach((port) => this._removePort(port));
+	}
+
+	async _disconnectAllPorts() {
+		await Promise.allSettled([...midiAccess._allPorts.values()].filter((port) => port._midiAccess).map((port) => port._disconnect()));
+		[...midiAccess._allPorts.values()].filter((port) => !port._midiAccess).forEach((port) => midiAccess._removePort(port));
 	}
 }
 
@@ -289,16 +298,14 @@ worker?.addEventListener('message', async (e) => {
 	case 'notifySerialAvailable':
 		if (!isSerialAvailable) {
 			isSerialAvailable = true;
-			await Promise.allSettled([...midiAccess._allPorts.values()].filter((port) => port._midiAccess).map((port) => port._connect()));
-			[...midiAccess._allPorts.values()].filter((port) => !port._midiAccess).forEach((port) => midiAccess._removePort(port));
+			await midiAccess._connectAllPorts();
 		}
 		break;
 
 	case 'notifySerialUnavailable':
 		if (isSerialAvailable) {
 			isSerialAvailable = false;
-			await Promise.allSettled([...midiAccess._allPorts.values()].filter((port) => port._midiAccess).map((port) => port._disconnect()));
-			[...midiAccess._allPorts.values()].filter((port) => !port._midiAccess).forEach((port) => midiAccess._removePort(port));
+			await midiAccess._disconnectAllPorts();
 		}
 		break;
 
