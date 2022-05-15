@@ -230,8 +230,8 @@ class MIDIAccess extends EventTarget {
 	}
 
 	async _disconnectAllPorts() {
-		await Promise.allSettled([...midiAccess._allPorts.values()].filter((port) => port._midiAccess).map((port) => port._disconnect()));
-		[...midiAccess._allPorts.values()].filter((port) => !port._midiAccess).forEach((port) => midiAccess._removePort(port));
+		await Promise.allSettled([...this._allPorts.values()].filter((port) => port._midiAccess).map((port) => port._disconnect()));
+		[...this._allPorts.values()].filter((port) => !port._midiAccess).forEach((port) => this._removePort(port));
 	}
 }
 
