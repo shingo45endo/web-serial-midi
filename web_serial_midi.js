@@ -136,22 +136,23 @@ class MIDIOutput extends MIDIPort {
 			return;
 		}
 
+		// Checks the payload of MIDI messages.
+		// TODO: Treats F5 event as undefined system common message. (Not a port prefix for serial MIDI)
+		if (!isValidMessageBytes(data)) {
+			throw new TypeError('Invalid data');
+		}
+
+		// Prepare the arguments.
+		if (!(data instanceof Uint8Array)) {
+			console.assert(Array.isArray(data));
+			data = new Uint8Array(data);
+		}
 		if (!timestamp) {
 			timestamp = performance.now();
 		}
 
-		// TODO: Checks the payload of MIDI messages.
-		let bytes;
-		if (data instanceof Uint8Array) {
-			bytes = data;
-		} else if (Array.isArray(data) && data.every((e) => Number.isInteger(e) && (0 <= e && e < 256))) {
-			bytes = new Uint8Array(data);
-		}
-		if (!bytes) {
-			throw new TypeError('Invalid data');
-		}
-
-		worker.postMessage({kind: 'MIDIOutput_send', bytes, timestamp, portPrefix: this._portPrefix});
+		// Sends the chunk of MIDI messages to serial.
+		worker.postMessage({kind: 'MIDIOutput_send', bytes: data, timestamp, portPrefix: this._portPrefix});
 	}
 
 	clear() {
