@@ -1,3 +1,5 @@
+import {MidiEventParser, isValidMessageBytes} from './midi_event_parser.js';
+
 const worker = ('serial' in navigator) ? new Worker(import.meta.url.replace(/\/[^/]*$/u, '/serial_worker.js'), {type: 'module'}) : null;
 
 class MIDIPort extends EventTarget {
@@ -8,7 +10,6 @@ class MIDIPort extends EventTarget {
 		this._portPrefix = properties?.portPrefix ?? -1;
 
 		const type = (this instanceof MIDIOutput) ? 'out' : 'in';
-
 		this.id = `serial-midi-${type}${(this._portPrefix >= 0) ? `-${String.fromCharCode(0x61 + this._portIndex)}-${this._portPrefix}` : ''}`;
 		this.name = properties?.name ?? this.id;
 		this.manufacturer = 'web-serial-midi';
@@ -160,6 +161,23 @@ class MIDIOutput extends MIDIPort {
 	}
 }
 
+class MIDIInput extends MIDIPort {
+	constructor(properties) {
+		super(properties);
+
+		this.type = 'input';
+	}
+
+	_notifyMidiMessage(bytes, timestamp) {
+		if (this.state === 'connected' && this.connection === 'opened') {
+			const event = new Event('midimessage');
+			event.data = bytes;
+			event.receivedTime = timestamp ?? performance.now();
+			this.dispatchEvent(event);
+		}
+	}
+}
+
 /* eslint-disable no-underscore-dangle */
 
 class MIDIAccess extends EventTarget {
@@ -171,6 +189,9 @@ class MIDIAccess extends EventTarget {
 		this.sysexEnabled = options.sysex ?? false;
 
 		this._allPorts = new Map();
+
+		this._parser = new MidiEventParser();
+		this._lastPortPrefix = -1;
 	}
 
 	_addPort(port) {
@@ -187,6 +208,7 @@ class MIDIAccess extends EventTarget {
 		switch (type) {
 		case 'input':
 			this.inputs.set(id, port);
+			this._lastPortPrefix = -1;
 			break;
 		case 'output':
 			this.outputs.set(id, port);
@@ -211,6 +233,7 @@ class MIDIAccess extends EventTarget {
 		switch (type) {
 		case 'input':
 			this.inputs.delete(id);
+			this._lastPortPrefix = -1;
 			break;
 		case 'output':
 			this.outputs.delete(id);
@@ -232,6 +255,28 @@ class MIDIAccess extends EventTarget {
 	async _disconnectAllPorts() {
 		await Promise.allSettled([...this._allPorts.values()].filter((port) => port._midiAccess).map((port) => port._disconnect()));
 		[...this._allPorts.values()].filter((port) => !port._midiAccess).forEach((port) => this._removePort(port));
+	}
+
+	_inputBytes(bytes) {
+		// Parses input data from serial.
+		this._parser.pushBytes(bytes);
+		const messages = this._parser.popEvents();
+
+		if (messages.length > 0) {
+			for (const bytes of messages) {
+				// Handles F5 event.
+				if (bytes[0] === 0xf5) {
+					console.assert(bytes.length === 2);
+//					this._lastPortPrefix = bytes[1];	// TODO: Temporally disabled until multi-port input is supported.
+					continue;
+				}
+
+				// Dispatches a MIDI input event to input ports.
+				for (const port of [...this.inputs.values()].filter((port) => port._portPrefix === this._lastPortPrefix)) {
+					port._notifyMidiMessage(bytes);
+				}
+			}
+		}
 	}
 }
 
@@ -268,11 +313,13 @@ export async function requestMIDIAccess(options = {}) {
 	try {
 		midiAccess = new MIDIAccess(options);
 
-		// Adds a default MIDI port.
+		// Adds default MIDI ports.
+		// TODO: Determines the number of each input/output port required by Device Inquiry.
 		midiAccess._addPort(new MIDIOutput({name: `Serial MIDI Out`}));
 		for (let i = 0; i < 5; i++) {
 			midiAccess._addPort(new MIDIOutput({name: `Serial MIDI Out (Port-${String.fromCharCode(0x41 + i)})`, portIndex: i, portPrefix: i + 1}));
 		}
+		midiAccess._addPort(new MIDIInput({name: `Serial MIDI In`}));
 
 		// Waits for preparation of serial port.
 		await new Promise((resolve) => {
@@ -308,6 +355,10 @@ worker?.addEventListener('message', async (e) => {
 			isSerialAvailable = false;
 			await midiAccess._disconnectAllPorts();
 		}
+		break;
+
+	case 'notifySerialReadData':
+		midiAccess._inputBytes(args.bytes);
 		break;
 
 	default:
