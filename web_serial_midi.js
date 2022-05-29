@@ -6,11 +6,10 @@ class MIDIPort extends EventTarget {
 	constructor(properties) {
 		super();
 
-		this._portIndex  = properties?.portIndex  ??  0;
 		this._portPrefix = properties?.portPrefix ?? -1;
 
 		const type = (this instanceof MIDIOutput) ? 'out' : 'in';
-		this.id = `serial-midi-${type}${(this._portPrefix >= 0) ? `-${String.fromCharCode(0x61 + this._portIndex)}-${this._portPrefix}` : ''}`;
+		this.id = `serial-midi-${type}${(this._portPrefix >= 0) ? `-${this._portPrefix}` : ''}`;
 		this.name = properties?.name ?? this.id;
 		this.manufacturer = 'web-serial-midi';
 		this.version = '0.1.0';
@@ -317,7 +316,7 @@ export async function requestMIDIAccess(options = {}) {
 		// TODO: Determines the number of each input/output port required by Device Inquiry.
 		midiAccess._addPort(new MIDIOutput({name: `Serial MIDI Out`}));
 		for (let i = 0; i < 5; i++) {
-			midiAccess._addPort(new MIDIOutput({name: `Serial MIDI Out (Port-${String.fromCharCode(0x41 + i)})`, portIndex: i, portPrefix: i + 1}));
+			midiAccess._addPort(new MIDIOutput({name: `Serial MIDI Out (Port-${String.fromCharCode(0x41 + i)})`, portPrefix: i + 1}));
 		}
 		midiAccess._addPort(new MIDIInput({name: `Serial MIDI In`}));
 
