@@ -183,7 +183,7 @@ export class MidiEventParser {
 	}
 
 	popEvents() {
-		const ret = this._events.map((e) => new Uint8Array(e));
+		const ret = [...this._events];
 		this._events = [];
 		return ret;
 	}
@@ -198,7 +198,7 @@ export class MidiEventParser {
 		} else {
 			// Pushes real-time MIDI messages.
 			for (const index of indicesRealTime) {
-				this._events.push(new Uint8Array(bytes.buffer, index, 1));
+				this._events.push(new Uint8Array([bytes[index]]));
 			}
 
 			// Appends the data to the FIFO excluding real-time message bytes.
@@ -252,7 +252,7 @@ export class MidiEventParser {
 				} else {
 					// Pushes a MIDI message.
 					console.assert(isValidMessage(eventBytes));
-					this._events.push(eventBytes);
+					this._events.push(eventBytes.slice(0));	// Makes a copy of Uint8Array and pushes it.
 					fifo.trashFront(len);
 					this._runningStatus = getNewRunningStatus(statusByte, this._runningStatus);
 				}
@@ -279,7 +279,7 @@ export class MidiEventParser {
 				const len = indexMsb + 1;
 				const eventBytes = fifo.popFront(len);
 				console.assert(isValidMessage(eventBytes));
-				this._events.push(eventBytes);
+				this._events.push(eventBytes.slice(0));	// Makes a copy of Uint8Array and pushes it.
 			}
 		}
 	}
