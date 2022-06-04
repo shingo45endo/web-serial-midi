@@ -33,6 +33,8 @@ After resolved the returned promise successfully, the promise returned by `reque
 
 Returns a Promise object representing a request for access to MIDI devices connected by the serial port set up by `prepareForSerialMidi`. This API is provided as a stand-alone function. (Not as a member of `navigator`)
 
+The configuration of `outputs` and `inputs` in `MIDIAccess` returned from this API is automatically set appropriately for the connected devices. Specifically, if the connected device supports multiple ports, `outputs` and `inputs` also have multiple `MIDIOutput` and `MIDIInput`. This module has a database of the Identity Reply returned by MIDI devices and information about the ports supported by the MIDI devices. And, when the API is called, it sends Identity Request to MIDI device and waits for Identity Reply from the MIDI device to get the information of port configuration.
+
 #### Syntax
 
 	Promise<MIDIAccess> requestMIDIAccess([options])
