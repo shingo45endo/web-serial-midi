@@ -67,7 +67,7 @@ Appendix: List of MIDI devices with serial terminal
 | Roland       | SC-880      |         2 |         1 | [^1] |
 | Roland ED    | SC-8850     |         5 |         2 | [^2] |
 | Roland ED    | SC-8820     |         3 |         2 | [^3] |
-| Roland ED    | SK-500      |         3 |         2 | [^3] |
+| Roland ED    | SK-500      |         3 |         2 | [^4] |
 | Edirol       | SD-20       |         2 |         1 | [^1] |
 | Roland       | XP-30       |         1 |         1 |      |
 | Roland       | JV-1010     |         1 |         1 |      |
@@ -76,6 +76,7 @@ Appendix: List of MIDI devices with serial terminal
 [^1]: 2 outputs for TG (Part A, B)
 [^2]: 4 outputs for TG (Part A-D), 1 output for MIDI-OUT. 1 input from TG, 1 input from MIDI-IN.
 [^3]: 2 outputs for TG (Part A, B), 1 output for MIDI-OUT. 1 input from TG, 1 input from MIDI-IN.
+[^4]: 2 outputs for TG (Part A, B), 1 output for MIDI-OUT. 1 input from TG, 1 input from keyboard.
 
 ### Roland: Digital pianos and intelligent keyboards
 
@@ -125,21 +126,21 @@ Appendix: List of MIDI devices with serial terminal
 | Yamaha       | VL70m     |         1 |         1 |      |
 | Yamaha       | EOS B2000 |         1 |         1 |      |
 | Yamaha       | MU90      |         2 |         1 | [^1] |
-| Yamaha       | MU100     |         3 |         1 | [^4] |
+| Yamaha       | MU100     |         3 |         1 | [^5] |
 | Yamaha       | MU90R     |         2 |         1 | [^1] |
 | Yamaha       | QY70      |         1 |         1 |      |
 | Yamaha       | MU90B     |         2 |         1 | [^1] |
-| Yamaha       | MU100R    |         3 |         1 | [^4] |
-| Yamaha       | MU100B    |         3 |         1 | [^4] |
-| Yamaha       | MU128     |         5 |         1 | [^5] |
+| Yamaha       | MU100R    |         3 |         1 | [^5] |
+| Yamaha       | MU100B    |         3 |         1 | [^5] |
+| Yamaha       | MU128     |         5 |         1 | [^6] |
 | Yamaha       | CS2x      |         1 |         1 |      |
 | Yamaha       | MU15      |         1 |         1 |      |
-| Yamaha       | CS6x      |         2 |         1 | [^6] |
-| Yamaha       | CS6R      |         2 |         1 | [^6] |
-| Yamaha       | S80       |         2 |         1 | [^6] |
-| Yamaha       | MU2000    |         5 |         1 | [^5] |
-| Yamaha       | MU1000    |         5 |         1 | [^5] |
-| Yamaha       | S30       |         2 |         1 | [^6] |
+| Yamaha       | CS6x      |         2 |         1 | [^7] |
+| Yamaha       | CS6R      |         2 |         1 | [^7] |
+| Yamaha       | S80       |         2 |         1 | [^7] |
+| Yamaha       | MU2000    |         5 |         1 | [^6] |
+| Yamaha       | MU1000    |         5 |         1 | [^6] |
+| Yamaha       | S30       |         2 |         1 | [^7] |
 | Yamaha       | QY100     |         1 |         1 |      |
 | Yamaha       | MU500     |         2 |         1 | [^1] |
 | Yamaha       | S03/S03SL |         1 |         1 |      |
@@ -147,9 +148,9 @@ Appendix: List of MIDI devices with serial terminal
 | Yamaha       | CBX-D5    |         1 |         1 |      |
 | Yamaha       | A7000     |         1 |         1 |      |
 
-[^4]: 2 outputs for internal TG (Part A, B), 1 output for plug-in board. (PLG100-XG)
-[^5]: 4 outputs for internal TG (Part A-D), 1 output for plug-in board. (PLG100-XG)
-[^6]: 1 output for internal TG, 1 output for plug-in board. (PLG100-XG)
+[^5]: 2 outputs for internal TG (Part A, B), 1 output for plug-in board. (PLG100-XG)
+[^6]: 4 outputs for internal TG (Part A-D), 1 output for plug-in board. (PLG100-XG)
+[^7]: 1 output for internal TG, 1 output for plug-in board. (PLG100-XG)
 
 ### Yamaha: Drum modules
 
@@ -162,16 +163,16 @@ Appendix: List of MIDI devices with serial terminal
 
 ### Yamaha: Digital mixers
 
-| Manufacturer | Name   | Ports (O) | Ports (I) | Note |
-|--------------|--------|-----------|-----------|------|
-| Yamaha       | 03D    |        10 |        10 | [^8] |
-| Yamaha       | 02R    |         1 |         1 |      |
-| Yamaha       | 01V    |         1 |         1 |      |
-| Yamaha       | DM2000 |         8 |         8 | [^9] |
-| Yamaha       | 02R96  |         8 |         8 | [^9] |
+| Manufacturer | Name   | Ports (O) | Ports (I) | Note  |
+|--------------|--------|-----------|-----------|-------|
+| Yamaha       | 03D    |        10 |        10 | [^9]  |
+| Yamaha       | 02R    |         1 |         1 |       |
+| Yamaha       | 01V    |         1 |         1 |       |
+| Yamaha       | DM2000 |         8 |         8 | [^10] |
+| Yamaha       | 02R96  |         8 |         8 | [^10] |
 
-[^8]: 8 ports for Port 1-8 (same as MOTU MIDI Time Piece?), 1 port for Port 17, and 1 port for Port ALL. (broadcast)
-[^9]: 8 ports for Port 1-8. (same as MOTU MIDI Time Piece?)
+[^9]: 8 ports for Port 1-8 (same as MOTU MIDI Time Piece?), 1 port for Port 17, and 1 port for Port ALL. (broadcast)
+[^10]: 8 ports for Port 1-8. (same as MOTU MIDI Time Piece?)
 
 ### Yamaha: Portatone
 
@@ -264,14 +265,14 @@ Appendix: List of MIDI devices with serial terminal
 | Korg         | X5        |         1 |         1 |      |
 | Korg         | X5DR      |         1 |         1 |      |
 | Korg         | X5D       |         1 |         1 |      |
-| Korg         | NS5R/NX5R |         3 |         1 | [^7] |
+| Korg         | NS5R/NX5R |         3 |         1 | [^8] |
 | Korg         | TR-Rack   |         1 |         1 |      |
 | Korg         | N5        |         2 |         1 | [^1] |
 | Korg         | N1        |         2 |         1 | [^1] |
 | Korg         | N1R       |         2 |         1 | [^1] |
 | Korg         | N5EX      |         2 |         1 | [^1] |
 
-[^7]: 2 outputs for internal TG (Part A, B), 1 output for daughter board.
+[^8]: 2 outputs for internal TG (Part A, B), 1 output for daughter board.
 
 ### Korg: Digital pianos and intelligent keyboards
 
@@ -297,16 +298,17 @@ Appendix: List of MIDI devices with serial terminal
 
 ### Kawai: Sound modules and synthesizers
 
-| Manufacturer | Name            | Ports (O) | Ports (I) | Note |
-|--------------|-----------------|-----------|-----------|------|
-| Kawai        | XS-2 (GMega)    |         1 |         1 | [^10]|
-| Kawai        | K11             |         1 |         1 | [^10]|
-| Kawai        | KC20            |         1 |         1 |      |
-| Kawai        | XC-3 (GMega LX) |         1 |         1 |      |
-| Kawai        | XC-1 (GMouse)   |         1 |         1 |      |
-| Kawai        | KC3 (GMCat)     |         1 |         1 |      |
+| Manufacturer | Name            | Ports (O) | Ports (I) | Note  |
+|--------------|-----------------|-----------|-----------|-------|
+| Kawai        | XS-2 (GMega)    |         1 |         1 | [^11] |
+| Kawai        | K11             |         1 |         1 | [^11] |
+| Kawai        | GMega L         |         1 |         1 |       |
+| Kawai        | KC20            |         1 |         1 |       |
+| Kawai        | XC-3 (GMega LX) |         1 |         1 |       |
+| Kawai        | XC-1 (GMouse)   |         1 |         1 |       |
+| Kawai        | KC3 (GMCat)     |         1 |         1 |       |
 
-[^10]: Supports only Macintosh. (RS-422)
+[^11]: Supports only Macintosh. (RS-422)
 
 ### Kawai: Digital pianos
 
@@ -341,13 +343,13 @@ Appendix: List of MIDI devices with serial terminal
 
 ### Suzuki: Sound modules
 
-| Manufacturer | Name    | Ports (O) | Ports (I) | Note |
-|--------------|---------|-----------|-----------|------|
-| Suzuki       | BH-1000 |         1 |         1 | [^11]|
-| Eniac        | BH-1000 |         1 |         1 |      |
-| Hammond      | GM-1000 |         1 |         1 |      |
+| Manufacturer | Name    | Ports (O) | Ports (I) | Note  |
+|--------------|---------|-----------|-----------|-------|
+| Suzuki       | BH-1000 |         1 |         1 | [^12] |
+| Eniac        | BH-1000 |         1 |         1 |       |
+| Hammond      | GM-1000 |         1 |         1 |       |
 
-[^11]: Supports only 31.25kbps.
+[^12]: Supports only 31.25kbps.
 
 ### Suzuki: Educational instruments
 
@@ -358,11 +360,11 @@ Appendix: List of MIDI devices with serial terminal
 
 ### E-mu: Sound modules
 
-| Manufacturer | Name         | Ports (O) | Ports (I) | Note |
-|--------------|--------------|-----------|-----------|------|
-| E-mu         | Sound Engine |         1 |         1 | [^10]|
+| Manufacturer | Name         | Ports (O) | Ports (I) | Note  |
+|--------------|--------------|-----------|-----------|-------|
+| E-mu         | Sound Engine |         1 |         1 | [^11] |
 
-[^10]: Supports only Macintosh. (RS-422)
+[^11]: Supports only Macintosh. (RS-422)
 
 ### Alesis: Sound modules and synthesizers
 
@@ -376,3 +378,40 @@ Appendix: List of MIDI devices with serial terminal
 | Alesis       | QS 8.1    |         1 |         1 |
 | Alesis       | QSR       |         1 |         1 |
 | Alesis       | NanoSynth |         1 |         1 |
+
+### Ketron: Arranger keyboards and sound modules
+
+| Manufacturer | Name         | Ports (O) | Ports (I) | Note  |
+|--------------|--------------|-----------|-----------|-------|
+| Ketron       | X1/X4/X8     |         1 |         1 | [^13] |
+| Ketron       | SD1/SD1 PLUS |         1 |         1 | [^13] |
+| Ketron       | DG100        |         1 |         1 | [^13] |
+| Ketron       | DG90         |         1 |         1 | [^13] |
+| Ketron       | SD8/SD5/SD3  |         1 |         1 | [^13] |
+| Ketron       | SX3000       |         1 |         1 | [^13] |
+| Ketron       | XD9/XD3      |         1 |         1 | [^13] |
+| Ketron       | VEGA         |         1 |         1 | [^13] |
+
+[^13]: Seems not to support 31.25kbps.
+
+### Generalmusic: Arranger keyboards and digital pianos
+
+| Manufacturer | Name                | Ports (O) | Ports (I) | Note  |
+|--------------|---------------------|-----------|-----------|-------|
+| Generalmusic | PS2500/GPS2500      |         1 |         1 | [^13] |
+| Generalmusic | PK7                 |         1 |         1 | [^13] |
+| Generalmusic | WK2                 |         1 |         1 | [^13] |
+| Generalmusic | WK3                 |         1 |         1 | [^13] |
+| Generalmusic | WK4                 |         1 |         1 | [^13] |
+| Generalmusic | SK76/SK88           |         1 |         1 | [^13] |
+| Generalmusic | RP PRO1/RP PRO2     |         1 |         1 | [^13] |
+| Generalmusic | WK6/WK8             |         1 |         1 | [^13] |
+| Generalmusic | WK1000              |         1 |         1 | [^13] |
+| Generalmusic | WK2000 SE           |         1 |         1 | [^13] |
+| Generalmusic | EQUINOX             |         1 |         1 | [^13] |
+| Generalmusic | RP90                |         1 |         1 | [^13] |
+| Generalmusic | RP100/150/200       |         1 |         1 | [^13] |
+| Generalmusic | PS1000/1300         |         1 |         1 | [^13] |
+| Generalmusic | RP220               |         1 |         1 | [^13] |
+| Generalmusic | GPS3600/2600/PS2600 |         1 |         1 | [^13] |
+| Generalmusic | WK1                 |         1 |         1 | [^13] |
