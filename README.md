@@ -419,3 +419,15 @@ Appendix: List of MIDI devices with serial terminal
 | Generalmusic | RP220               |         1 |         1 | x |   | x |
 | Generalmusic | GPS3600/2600/PS2600 |         1 |         1 | x |   | x |
 | Generalmusic | WK1                 |         1 |         1 | x |   | x |
+
+
+License
+-------
+
+MIT
+
+
+Author
+------
+
+[shingo45endo](https://github.com/shingo45endo)
