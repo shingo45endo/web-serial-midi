@@ -13,6 +13,10 @@ const devices = Object.freeze([
 		mfrId: [0x41], deviceFamily: [0x1a, 0x00], deviceFamilyMember: [0x00, 0x04], softwareRevision: [0x00, 0x01, 0x00, 0x00],
 	},
 	{
+		mfrName: 'Roland', deviceName: 'KR-370',
+		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x00, 0x00], softwareRevision: [0x0b, 0x00, 0x00, 0x00],
+	},
+	{
 		mfrName: 'Roland', deviceName: 'XP-10',
 		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x02, 0x01], softwareRevision: [0x09, 0x01, 0x00, 0x01],
 	},
@@ -26,7 +30,7 @@ const devices = Object.freeze([
 		outputPorts: 2,
 	},
 	{
-		mfrName: 'Roland', deviceName: 'HP-550G',
+		mfrName: 'Roland', deviceName: 'HP-550G/KR-570',
 		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x00, 0x03], softwareRevision: [0x00, 0x01, 0x00, 0x00],
 	},
 	{
@@ -52,6 +56,30 @@ const devices = Object.freeze([
 	{
 		mfrName: 'Roland', deviceName: 'MT-300S',
 		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x03, 0x03], softwareRevision: [0x00, 0x01, 0x00, 0x00],
+	},
+	{
+		mfrName: 'Roland', deviceName: 'KR-575',
+		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x04, 0x03], softwareRevision: [0x00, 0x01, 0x00, 0x00],
+	},
+	{
+		mfrName: 'Roland', deviceName: 'AT-20R',	// Mode 1
+		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x05, 0x03], softwareRevision: [0x00, 0x01, 0x00, 0x00],
+	},
+	{
+		mfrName: 'Roland', deviceName: 'AT-30R',	// Mode 1
+		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x05, 0x03], softwareRevision: [0x01, 0x01, 0x00, 0x00],
+	},
+	{
+		mfrName: 'Roland', deviceName: 'AT-60R',	// Mode 1
+		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x05, 0x03], softwareRevision: [0x02, 0x01, 0x00, 0x00],
+	},
+	{
+		mfrName: 'Roland', deviceName: 'AT-80R',	// Mode 1
+		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x05, 0x03], softwareRevision: [0x03, 0x01, 0x00, 0x00],
+	},
+	{
+		mfrName: 'Roland', deviceName: 'AT-90R',	// Mode 1
+		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x05, 0x03], softwareRevision: [0x04, 0x01, 0x00, 0x00],
 	},
 	{
 		mfrName: 'Roland', deviceName: 'KR-277',
@@ -141,12 +169,24 @@ const devices = Object.freeze([
 		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x00, 0x0f], softwareRevision: [0x01, 0x01, 0x00, 0x00],
 	},
 	{
-		mfrName: 'Roland', deviceName: 'AT-20R',
+		mfrName: 'Roland', deviceName: 'AT-20R',	// Mode 2
 		mfrId: [0x41], deviceFamily: [0x62, 0x00], deviceFamilyMember: [0x00, 0x00], softwareRevision: [0x00, 0x01, 0x00, 0x00],
 	},
 	{
-		mfrName: 'Roland', deviceName: 'AT-30R',
+		mfrName: 'Roland', deviceName: 'AT-30R',	// Mode 2
 		mfrId: [0x41], deviceFamily: [0x62, 0x00], deviceFamilyMember: [0x00, 0x00], softwareRevision: [0x01, 0x01, 0x00, 0x00],
+	},
+	{
+		mfrName: 'Roland', deviceName: 'AT-60R',	// Mode 2
+		mfrId: [0x41], deviceFamily: [0x62, 0x00], deviceFamilyMember: [0x00, 0x01], softwareRevision: [0x00, 0x01, 0x00, 0x00],
+	},
+	{
+		mfrName: 'Roland', deviceName: 'AT-80R',	// Mode 2
+		mfrId: [0x41], deviceFamily: [0x62, 0x00], deviceFamilyMember: [0x01, 0x01], softwareRevision: [0x00, 0x01, 0x00, 0x00],
+	},
+	{
+		mfrName: 'Roland', deviceName: 'AT-90R',	// Mode 2
+		mfrId: [0x41], deviceFamily: [0x62, 0x00], deviceFamilyMember: [0x01, 0x01], softwareRevision: [0x01, 0x01, 0x00, 0x00],
 	},
 	{
 		mfrName: 'Roland', deviceName: 'XP-30',

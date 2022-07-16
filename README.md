@@ -82,22 +82,32 @@ Appendix: List of MIDI devices with serial terminal
 [^3]: 2 outputs for TG (Part A, B), 1 output for MIDI-OUT. 1 input from TG, 1 input from MIDI-IN.
 [^4]: 2 outputs for TG (Part A, B), 1 output for MIDI-OUT. 1 input from TG, 1 input from keyboard.
 
-### Roland: Digital pianos and intelligent keyboards
+### Roland: Digital pianos, intelligent keyboards, and organs
 
 | Manufacturer | Name            | Ports (O) | Ports (I) | I | N | M |
 |--------------|-----------------|-----------|-----------|---|---|---|
-| Roland       | HP-550G         |         1 |         1 | x | x | x |
+| Roland       | KR-370          |         1 |         1 | x | x | x |
+| Roland       | HP-550G/KR-570  |         1 |         1 | x | x | x |
 | Roland       | E-300/KR-75     |         1 |         1 | x | x | x |
 | Roland       | HP-335          |         1 |         1 | x | x | x |
 | Roland       | HP-535          |         1 |         1 | x | x | x |
 | Roland       | HP-555G         |         1 |         1 | x | x | x |
 | Roland       | KR-375          |         1 |         1 | x | x | x |
+| Roland       | KR-575          |         1 |         1 | x | x | x |
 | Roland       | KR-277          |         1 |         1 | x | x | x |
+| Roland       | AT-20R          |         1 |         1 | x | x | x |
+| Roland       | AT-30R          |         1 |         1 | x | x | x |
+| Roland       | AT-60R          |         1 |         1 | x | x | x |
+| Roland       | AT-80R          |         1 |         1 | x | x | x |
+| Roland       | AT-90R          |         1 |         1 | x | x | x |
 | Roland       | KR-577/977/1077 |         1 |         1 | x | x | x |
 | Roland       | HP-337/337R     |         1 |         1 | x | x | x |
 | Roland       | HP-557R         |         1 |         1 | x | x | x |
 | Roland       | KR-377          |         1 |         1 | x | x | x |
 | Roland       | KF-90           |         1 |         1 | x | x | x |
+| Roland       | AT-10S          |         1 |         1 | x | x | x |
+| Roland       | AT-90S/80S/60S  |         1 |         1 | x | x | x |
+| Roland       | AT-20S          |         1 |         1 | x | x | x |
 | Roland       | KR-5            |         1 |         1 | x | x | x |
 | Roland       | KR-7            |         1 |         1 | x | x | x |
 | Roland       | KF-7            |         1 |         1 | x | x | x |
@@ -110,8 +120,6 @@ Appendix: List of MIDI devices with serial terminal
 | Roland       | HP-330/245      |         1 |         1 | x | x | x |
 | Roland       | HP-530          |         1 |         1 | x | x | x |
 | Roland       | FP-9            |         1 |         1 | x | x | x |
-| Roland       | AT-30R          |         1 |         1 | x | x | x |
-| Roland       | AT-20R          |         1 |         1 | x | x | x |
 
 ### Yamaha: Sound modules and synthesizers
 
