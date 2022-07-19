@@ -21,7 +21,7 @@ const devices = Object.freeze([
 		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x02, 0x01], softwareRevision: [0x09, 0x01, 0x00, 0x01],
 	},
 	{
-		mfrName: 'Roland', deviceName: 'PMA-5',
+		mfrName: 'Roland', deviceName: 'PMA-5',	// GM/GS Sound Module Mode
 		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x0c, 0x01], softwareRevision: [0x00, 0x00, 0x00, 0x00],
 	},
 	{
@@ -195,6 +195,10 @@ const devices = Object.freeze([
 	{
 		mfrName: 'Roland', deviceName: 'JV-1010',
 		mfrId: [0x41], deviceFamily: [0x6a, 0x00], deviceFamilyMember: [0x05, 0x00], softwareRevision: [0x00, 0x00, 0x00, 0x00],
+	},
+	{
+		mfrName: 'Roland', deviceName: 'PMA-5',	// Normal Mode
+		mfrId: [0x41], deviceFamily: [0x05, 0x01], deviceFamilyMember: [0x00, 0x00], softwareRevision: [0x00, 0x06, 0x00, 0x00],
 	},
 	{
 		mfrName: 'Roland', deviceName: 'XV-88',
