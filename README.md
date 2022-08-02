@@ -351,6 +351,38 @@ Appendix: List of MIDI devices with serial terminal
 |--------------|-------|-----------|-----------|---|---|---|
 | Akai         | SG01k |         1 |         1 | x | x | x |
 
+### Technics: Arranger keyboards
+
+| Manufacturer | Name      | Ports (O) | Ports (I) | I | N | M |
+|--------------|-----------|-----------|-----------|---|---|---|
+| Technics     | SX-KN1400 |         1 |         1 | x | x | x |
+| Technics     | SX-KN1600 |         1 |         1 | x | x | x |
+| Technics     | SX-KN5000 |         1 |         1 | x | x | x |
+| Technics     | SX-KN6000 |         1 |         1 | x | x | x |
+| Technics     | SX-KN6500 |         1 |         1 | x | x | x |
+
+### Technics: Digital pianos
+
+| Manufacturer | Name        | Ports (O) | Ports (I) | I | N | M |
+|--------------|-------------|-----------|-----------|---|---|---|
+| Technics     | SX-PX222/M  |         1 |         1 | x | x | x |
+| Technics     | SX-PX224/M  |         1 |         1 | x | x | x |
+| Technics     | SX-PX332/M  |         1 |         1 | x | x | x |
+| Technics     | SX-PX334/M  |         1 |         1 | x | x | x |
+| Technics     | SX-PX552/M  |         1 |         1 | x | x | x |
+| Technics     | SX-PX554/M  |         1 |         1 | x | x | x |
+| Technics     | SX-PX226/M  |         1 |         1 | x | x | x |
+| Technics     | SX-PX228B   |         1 |         1 | x | x | x |
+| Technics     | SX-PX336/M  |         1 |         1 | x | x | x |
+| Technics     | SX-PX338B   |         1 |         1 | x | x | x |
+| Technics     | SX-PX665    |         1 |         1 | x | x | x |
+| Technics     | SX-PR602/M  |         1 |         1 | x | x | x |
+| Technics     | SX-PR702/M  |         1 |         1 | x | x | x |
+| Technics     | SX-PR902R/C |         1 |         1 | x | x | x |
+| Technics     | SX-PR603/M  |         1 |         1 | x | x | x |
+| Technics     | SX-PR703/M  |         1 |         1 | x | x | x |
+| Technics     | SX-PR903C/H |         1 |         1 | x | x | x |
+
 ### Suzuki: Sound modules
 
 | Manufacturer | Name    | Ports (O) | Ports (I) | I | N | M |
