@@ -66,6 +66,7 @@ Appendix: List of MIDI devices with serial terminal
 | Roland       | PMA-5       |         1 |         1 | x | x | x |      |
 | Roland       | SC-88ST     |         2 |         1 | x | x | x | [^1] |
 | Roland       | SC-88Pro    |         2 |         1 | x | x | x | [^1] |
+| Roland       | SC-55K      |         1 |         1 | x | x | x |      |
 | Roland       | SK-88Pro    |         2 |         1 | x | x | x | [^1] |
 | Roland       | SC-88ST Pro |         2 |         1 | x | x | x | [^1] |
 | Roland       | SC-880      |         2 |         1 | x | x | x | [^1] |
