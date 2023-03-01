@@ -87,7 +87,11 @@ Appendix: List of MIDI devices with serial terminal
 
 | Manufacturer | Name            | Ports (O) | Ports (I) | I | N | M |
 |--------------|-----------------|-----------|-----------|---|---|---|
+| Roland       | HP-2800G/3800G  |         1 |         1 | x | x | x |
+| Roland       | HP-1900G        |         1 |         1 | x | x | x |
+| Roland       | KR-4300         |         1 |         1 | x | x | x |
 | Roland       | KR-370          |         1 |         1 | x | x | x |
+| Roland       | KR-570          |         1 |         1 | x | x | x |
 | Roland       | HP-550G/KR-570  |         1 |         1 | x | x | x |
 | Roland       | E-300/KR-75     |         1 |         1 | x | x | x |
 | Roland       | HP-335          |         1 |         1 | x | x | x |
