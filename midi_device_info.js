@@ -328,6 +328,81 @@ const devices = Object.freeze([
 		mfrName: 'Yamaha', deviceName: 'EOS BX',
 		mfrId: [0x43], deviceFamily: [0x00, 0x41], deviceFamilyMember: [0x79, 0x04], softwareRevision: [0x00, 0x00, 0x00, 0x01],
 	},
+
+	{
+		mfrName: 'Yamaha', deviceName: 'CVP-92',
+		mfrId: [0x43], deviceFamily: [0x00, 0x43], deviceFamilyMember: [0x06, 0x0a], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'CVP-94',
+		mfrId: [0x43], deviceFamily: [0x00, 0x43], deviceFamilyMember: [0x08, 0x0a], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'CVP-96',
+		mfrId: [0x43], deviceFamily: [0x00, 0x43], deviceFamilyMember: [0x0a, 0x0a], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'CVP-98',
+		mfrId: [0x43], deviceFamily: [0x00, 0x43], deviceFamilyMember: [0x0e, 0x0a], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'CLP-870',
+		mfrId: [0x43], deviceFamily: [0x00, 0x43], deviceFamilyMember: [0x3c, 0x14], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'CVP-103',
+		mfrId: [0x43], deviceFamily: [0x00, 0x43], deviceFamilyMember: [0x4f, 0x14], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'CVP-105',
+		mfrId: [0x43], deviceFamily: [0x00, 0x43], deviceFamilyMember: [0x50, 0x14], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'CVP-107',
+		mfrId: [0x43], deviceFamily: [0x00, 0x43], deviceFamilyMember: [0x51, 0x14], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'CVP-109',
+		mfrId: [0x43], deviceFamily: [0x00, 0x43], deviceFamilyMember: [0x52, 0x14], softwareRevision: [-1, -1, -1, -1],
+	},
+
+	{
+		mfrName: 'Yamaha', deviceName: 'PSR-530/B50',
+		mfrId: [0x43], deviceFamily: [0x00, 0x44], deviceFamilyMember: [0x18, 0x0a], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'PSR-630',
+		mfrId: [0x43], deviceFamily: [0x00, 0x44], deviceFamilyMember: [0x19, 0x0a], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'PSR-730',
+		mfrId: [0x43], deviceFamily: [0x00, 0x44], deviceFamilyMember: [0x1a, 0x0a], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'PSR-8000',
+		mfrId: [0x43], deviceFamily: [0x00, 0x44], deviceFamilyMember: [0x1c, 0x0a], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'PSR-540',
+		mfrId: [0x43], deviceFamily: [0x00, 0x44], deviceFamilyMember: [0x5c, 0x14], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'PSR-640',
+		mfrId: [0x43], deviceFamily: [0x00, 0x44], deviceFamilyMember: [0x5d, 0x14], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'PSR-740',
+		mfrId: [0x43], deviceFamily: [0x00, 0x44], deviceFamilyMember: [0x5e, 0x14], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'PSR-9000',
+		mfrId: [0x43], deviceFamily: [0x00, 0x44], deviceFamilyMember: [0x5f, 0x14], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
+		mfrName: 'Yamaha', deviceName: 'PSR-9000Pro',
+		mfrId: [0x43], deviceFamily: [0x00, 0x44], deviceFamilyMember: [0x64, 0x14], softwareRevision: [-1, -1, -1, -1],
+	},
+
 	{
 		mfrName: 'Yamaha', deviceName: 'DTXPRESS',
 		mfrId: [0x43], deviceFamily: [0x00, 0x4c], deviceFamilyMember: [0x72, 0x07], softwareRevision: [0x00, 0x00, 0x00, 0x00],

@@ -196,11 +196,12 @@ Appendix: List of MIDI devices with serial terminal
 | Manufacturer | Name          | Ports (O) | Ports (I) | I | N | M |
 |--------------|---------------|-----------|-----------|---|---|---|
 | Yamaha       | PSR-730/630   |         1 |         1 | x | x | x |
-| Yamaha       | PSR-530       |         1 |         1 | x | x | x |
+| Yamaha       | PSR-530/B50   |         1 |         1 | x | x | x |
 | Yamaha       | PSR-8000      |         1 |         1 | x | x | x |
 | Yamaha       | PSR-740/640   |         1 |         1 | x | x | x |
 | Yamaha       | PSR-540       |         1 |         1 | x | x | x |
 | Yamaha       | PSR-9000      |         1 |         1 | x | x | x |
+| Yamaha       | PSR-9000Pro   |         1 |         1 | x | x | x |
 | Yamaha       | PSR-550       |         1 |         1 | x | x | x |
 | Yamaha       | PSR-2000/1000 |         1 |         1 | x | x | x |
 
