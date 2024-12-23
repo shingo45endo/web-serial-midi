@@ -290,6 +290,7 @@ Appendix: List of MIDI devices with serial terminal
 | Korg         | N1        |         2 |         1 | x | x | x | [^1] |
 | Korg         | N1R       |         2 |         1 | x | x | x | [^1] |
 | Korg         | N5EX      |         2 |         1 | x | x | x | [^1] |
+| Korg         | TRITON    |         1 |         1 | x | x | x |      |
 
 [^8]: 2 outputs for internal TG (Part A, B), 1 output for daughter board.
 

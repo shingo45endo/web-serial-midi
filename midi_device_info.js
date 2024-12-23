@@ -511,6 +511,18 @@ const devices = Object.freeze([
 		],
 	},
 	{
+		mfrName: 'Korg', deviceName: 'TRITON',
+		mfrId: [0x42], deviceFamily: [0x50, 0x00], deviceFamilyMember: [0x05, 0x00], softwareRevision: [-1, 0x00, -1, 0x00],
+	},
+	{
+		mfrName: 'Korg', deviceName: 'TRITON pro',
+		mfrId: [0x42], deviceFamily: [0x50, 0x00], deviceFamilyMember: [0x0e, 0x00], softwareRevision: [-1, 0x00, -1, 0x00],
+	},
+	{
+		mfrName: 'Korg', deviceName: 'TRITON proX',
+		mfrId: [0x42], deviceFamily: [0x50, 0x00], deviceFamilyMember: [0x17, 0x00], softwareRevision: [-1, 0x00, -1, 0x00],
+	},
+	{
 		mfrName: 'Korg', deviceName: 'C-8500',
 		mfrId: [0x42], deviceFamily: [0x56, 0x00], deviceFamilyMember: [0x07, 0x00], softwareRevision: [-1, -1, -1, -1],
 	},
