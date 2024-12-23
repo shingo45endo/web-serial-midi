@@ -306,6 +306,7 @@ Appendix: List of MIDI devices with serial terminal
 | Korg         | C-700         |         1 |         1 | x | x | x |
 | Korg         | C-550         |         1 |         1 | x | x | x |
 | Korg         | iS40          |         1 |         1 | x | ? | x |
+| Korg         | i30           |         1 |         1 | x | x | x |
 | Korg         | Ci-800        |         1 |         1 | x | x | x |
 | Korg         | C-900         |         1 |         1 | x | x | x |
 | Korg         | C-350         |         1 |         1 | x | x | x |

@@ -466,6 +466,10 @@ const devices = Object.freeze([
 		mfrId: [0x42], deviceFamily: [0x43, 0x00], deviceFamilyMember: [0x1d, 0x00], softwareRevision: [-1, 0x00, -1, 0x00],
 	},
 	{
+		mfrName: 'Korg', deviceName: 'i30',
+		mfrId: [0x42], deviceFamily: [0x49, 0x00], deviceFamilyMember: [0x00, 0x00], softwareRevision: [-1, -1, -1, -1],
+	},
+	{
 		mfrName: 'Korg', deviceName: 'N5',
 		mfrId: [0x42], deviceFamily: [0x4c, 0x00], deviceFamilyMember: [0x05, 0x00], softwareRevision: [-1, 0x00, -1, 0x00],
 		outputPorts: [
