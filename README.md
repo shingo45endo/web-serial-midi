@@ -204,6 +204,7 @@ Appendix: List of MIDI devices with serial terminal
 | Yamaha       | PSR-9000Pro   |         1 |         1 | x | x | x |
 | Yamaha       | PSR-550       |         1 |         1 | x | x | x |
 | Yamaha       | PSR-2000/1000 |         1 |         1 | x | x | x |
+| Yamaha       | PSR-A1000     |         1 |         1 | x | x | x |
 
 ### Yamaha: Clavinova and digital pianos
 
