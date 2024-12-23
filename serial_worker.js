@@ -253,7 +253,7 @@ navigator.serial.addEventListener('connect', async (e) => {
 });
 
 navigator.serial.addEventListener('disconnect', async (e) => {
-	// if the disconnected port is the current port chosen by requestPort(), notifies disconnection.
+	// If the disconnected port is the current port chosen by requestPort(), notifies disconnection.
 	if (e.target === serialPort) {
 		notifySerialUnavailable();
 		await closePort().catch((e) => console.warn(e)).finally(() => {	// Ignores error.
