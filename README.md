@@ -326,6 +326,7 @@ Appendix: List of MIDI devices with serial terminal
 | Kawai        | GMega L         |         1 |         1 | x | x | x |
 | Kawai        | KC20            |         1 |         1 | x | x | x |
 | Kawai        | XC-3 (GMega LX) |         1 |         1 | x | x | x |
+| Kawai        | X65-D           |         1 |         1 | x | x | x |
 | Kawai        | XC-1 (GMouse)   |         1 |         1 | x | x | x |
 | Kawai        | KC3 (GMCat)     |         1 |         1 | x | x | x |
 
@@ -333,14 +334,22 @@ Appendix: List of MIDI devices with serial terminal
 
 | Manufacturer | Name        | Ports (O) | Ports (I) | I | N | M |
 |--------------|-------------|-----------|-----------|---|---|---|
-| Kawai        | PN370       |         1 |         1 | x | x | x |
 | Kawai        | CP150/130   |         1 |         1 | x | x | x |
+| Kawai        | CA970/770   |         1 |         1 | x | x | x |
+| Kawai        | CN470       |         1 |         1 | x | x | x |
+| Kawai        | CN370       |         1 |         1 | x | x | x |
+| Kawai        | PN370       |         1 |         1 | x | x | x |
 | Kawai        | PW970/770   |         1 |         1 | x | x | x |
 | Kawai        | PN470       |         1 |         1 | x | x | x |
 | Kawai        | es1         |         1 |         1 | x | x | x |
-| Kawai        | PW1200/1000 |         1 |         1 | x | x | x |
+| Kawai        | CN380       |         1 |         1 | x | x | x |
+| Kawai        | ES-X        |         1 |         1 | x | x | x |
 | Kawai        | PN380       |         1 |         1 | x | x | x |
+| Kawai        | HS22        |         1 |         1 | x | x | x |
+| Kawai        | PW1200/1000 |         1 |         1 | x | x | x |
+| Kawai        | CA1200/1000 |         1 |         1 | x | x | x |
 | Kawai        | es2         |         1 |         1 | x | x | x |
+| Kawai        | CN390       |         1 |         1 | x | x | x |
 | Kawai        | PN390       |         1 |         1 | x | x | x |
 
 ### Casio: Sound modules and keyboards
