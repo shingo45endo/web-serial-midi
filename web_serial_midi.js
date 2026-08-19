@@ -344,6 +344,7 @@ export async function requestMIDIAccess(options = {}) {
 
 				// Makes MIDI ports from obtained port information.
 				let ports;
+				let isReceivedIdentityReply = false;
 				const timerId = setInterval(() => {
 					const messages = tmpParser.popEvents();
 					for (const bytes of messages) {
@@ -351,26 +352,28 @@ export async function requestMIDIAccess(options = {}) {
 							continue;
 						}
 
+						if (isReceivedIdentityReply) {
+							console.assert(ports);
+							continue;
+						}
+
 						if (bytes[1] === 0x7e && bytes[3] === 0x06 && bytes[4] === 0x02) {
 							// Gets device information from Identity Reply and makes MIDI ports from the information.
 							const deviceInfo = analyzeIdentityReply(bytes);
-							ports = makeMidiPorts(deviceInfo);	// Overwrites port information even if already exists.
+							ports = makeMidiPorts(deviceInfo);
+							isReceivedIdentityReply = true;
 
 						} else if (bytes[1] === 0x41 && bytes[3] === 0x42 && bytes[4] === 0x12 && bytes[5] === 0x40 && bytes[6] === 0x30 && bytes[7] === 0x00) {
 							// Roland SC-88 has 2 output ports but it doesn't support Device Inquiry. To identify it, checks the string of "GS System Information".
 							const infoStr = String.fromCharCode(...bytes.slice(8, -2));
 							if (infoStr.includes('SC-88')) {
-								if (!ports) {	// If port information already exists by Identity Reply, keeps it. Otherwise, makes MIDI ports.
-									ports = makeMidiPorts({deviceName: 'SC-88', outputPorts: 2});
-								}
+								ports = makeMidiPorts({deviceName: 'SC-88', outputPorts: 2});
 							}
 						} else if (bytes[1] === 0x43 && bytes[3] === 0x4c && bytes[6] === 0x01 && bytes[7] === 0x00 && bytes[8] === 0x00) {
 							// Yamaha MU80 has 2 output ports but it doesn't support Device Inquiry. To identify it, checks the string of "XG System Information".
 							const infoStr = String.fromCharCode(...bytes.slice(9, -2));
 							if (infoStr.includes('MU80')) {
-								if (!ports) {	// If port information already exists by Identity Reply, keeps it. Otherwise, makes MIDI ports.
-									ports = makeMidiPorts({deviceName: 'MU80', outputPorts: 2});
-								}
+								ports = makeMidiPorts({deviceName: 'MU80', outputPorts: 2});
 							}
 						}
 					}
