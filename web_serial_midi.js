@@ -357,7 +357,7 @@ export async function requestMIDIAccess(options = {}) {
 							ports = makeMidiPorts(deviceInfo);	// Overwrites port information even if already exists.
 
 						} else if (bytes[1] === 0x41 && bytes[3] === 0x42 && bytes[4] === 0x12 && bytes[5] === 0x40 && bytes[6] === 0x30 && bytes[7] === 0x00) {
-							// Roland SC-88 and SC-88VL have 2 output ports but they don't support Device Inquiry. To identify them, checks the string of "GS System Information".
+							// Roland SC-88 has 2 output ports but it doesn't support Device Inquiry. To identify it, checks the string of "GS System Information".
 							const infoStr = String.fromCharCode(...bytes.slice(8, -2));
 							if (infoStr.includes('SC-88')) {
 								if (!ports) {	// If port information already exists by Identity Reply, keeps it. Otherwise, makes MIDI ports.

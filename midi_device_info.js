@@ -25,6 +25,11 @@ const devices = Object.freeze([
 		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x0c, 0x01], softwareRevision: [0x00, 0x00, 0x00, 0x00],
 	},
 	{
+		mfrName: 'Roland', deviceName: 'SC-88VL',
+		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x00, 0x02], softwareRevision: [0x01, 0x00, 0x00, 0x00],
+		outputPorts: 2,
+	},
+	{
 		mfrName: 'Roland', deviceName: 'SC-88ST',
 		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x00, 0x02], softwareRevision: [-1, -1, -1, -1],
 		outputPorts: 2,
