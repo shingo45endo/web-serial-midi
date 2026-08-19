@@ -502,12 +502,21 @@ const devices = Object.freeze([
 		],
 	},
 	{
-		mfrName: 'Korg', deviceName: 'NS5R/NX5R',
+		mfrName: 'Korg', deviceName: 'NS5R',
 		mfrId: [0x42], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x00, 0x00], softwareRevision: [-1, 0x00, -1, 0x00],
 		outputPorts: [
-			{name: 'NS5R/NX5R Serial MIDI Out (Port-A)', portPrefix: 0x02},
-			{name: 'NS5R/NX5R Serial MIDI Out (Port-B)', portPrefix: 0x03},
-			{name: 'NS5R/NX5R Serial MIDI Out (Port-C)', portPrefix: 0x01},
+			{name: 'NS5R Serial MIDI Out (Port-A)', portPrefix: 0x02},
+			{name: 'NS5R Serial MIDI Out (Port-B)', portPrefix: 0x03},
+			{name: 'NS5R Serial MIDI Out (Port-C)', portPrefix: 0x01},
+		],
+	},
+	{
+		mfrName: 'Korg', deviceName: 'NX5R',
+		mfrId: [0x42], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x04, 0x00], softwareRevision: [-1, 0x00, -1, 0x00],
+		outputPorts: [
+			{name: 'NX5R Serial MIDI Out (Port-A)', portPrefix: 0x02},
+			{name: 'NX5R Serial MIDI Out (Port-B)', portPrefix: 0x03},
+			{name: 'NX5R Serial MIDI Out (Port-C)', portPrefix: 0x01},
 		],
 	},
 	{
