@@ -332,25 +332,26 @@ Appendix: List of MIDI devices with serial terminal
 
 ### Kawai: Digital pianos
 
-| Manufacturer | Name        | Ports (O) | Ports (I) | I | N | M |
-|--------------|-------------|-----------|-----------|---|---|---|
-| Kawai        | CP150/130   |         1 |         1 | x | x | x |
-| Kawai        | CA970/770   |         1 |         1 | x | x | x |
-| Kawai        | CN470       |         1 |         1 | x | x | x |
-| Kawai        | CN370       |         1 |         1 | x | x | x |
-| Kawai        | PN370       |         1 |         1 | x | x | x |
-| Kawai        | PW970/770   |         1 |         1 | x | x | x |
-| Kawai        | PN470       |         1 |         1 | x | x | x |
-| Kawai        | es1         |         1 |         1 | x | x | x |
-| Kawai        | CN380       |         1 |         1 | x | x | x |
-| Kawai        | ES-X        |         1 |         1 | x | x | x |
-| Kawai        | PN380       |         1 |         1 | x | x | x |
-| Kawai        | HS22        |         1 |         1 | x | x | x |
-| Kawai        | PW1200/1000 |         1 |         1 | x | x | x |
-| Kawai        | CA1200/1000 |         1 |         1 | x | x | x |
-| Kawai        | es2         |         1 |         1 | x | x | x |
-| Kawai        | CN390       |         1 |         1 | x | x | x |
-| Kawai        | PN390       |         1 |         1 | x | x | x |
+| Manufacturer | Name          | Ports (O) | Ports (I) | I | N | M |
+|--------------|---------------|-----------|-----------|---|---|---|
+| Kawai        | CP150/130     |         1 |         1 | x | x | x |
+| Kawai        | CP200/180/170 |         1 |         1 | x | x | x |
+| Kawai        | CA970/770     |         1 |         1 | x | x | x |
+| Kawai        | CN470         |         1 |         1 | x | x | x |
+| Kawai        | CN370         |         1 |         1 | x | x | x |
+| Kawai        | PN370         |         1 |         1 | x | x | x |
+| Kawai        | PW970/770     |         1 |         1 | x | x | x |
+| Kawai        | PN470         |         1 |         1 | x | x | x |
+| Kawai        | es1           |         1 |         1 | x | x | x |
+| Kawai        | CN380         |         1 |         1 | x | x | x |
+| Kawai        | ES-X          |         1 |         1 | x | x | x |
+| Kawai        | PN380         |         1 |         1 | x | x | x |
+| Kawai        | HS22          |         1 |         1 | x | x | x |
+| Kawai        | PW1200/1000   |         1 |         1 | x | x | x |
+| Kawai        | CA1200/1000   |         1 |         1 | x | x | x |
+| Kawai        | es2           |         1 |         1 | x | x | x |
+| Kawai        | CN390         |         1 |         1 | x | x | x |
+| Kawai        | PN390         |         1 |         1 | x | x | x |
 
 ### Casio: Sound modules and keyboards
 
