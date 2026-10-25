@@ -104,11 +104,11 @@ const devices = Object.freeze([
 		mfrName: 'Roland ED', deviceName: 'SC-8850',
 		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x00, 0x06], softwareRevision: [0x00, 0x00, 0x00, 0x00],
 		outputPorts: [
-			{name: 'SC-8850 Serial MIDI Out (Port-A)'},
-			{name: 'SC-8850 Serial MIDI Out (Port-B)'},
-			{name: 'SC-8850 Serial MIDI Out (Port-C)'},
-			{name: 'SC-8850 Serial MIDI Out (Port-D)'},
-			{name: 'SC-8850 Serial MIDI Out (MIDI OUT 1)'},
+			{name: 'SC-8850 Serial MIDI Out (Port-A)',     portPrefix: 0x01},
+			{name: 'SC-8850 Serial MIDI Out (Port-B)',     portPrefix: 0x02},
+			{name: 'SC-8850 Serial MIDI Out (Port-C)',     portPrefix: 0x03},
+			{name: 'SC-8850 Serial MIDI Out (Port-D)',     portPrefix: 0x04},
+			{name: 'SC-8850 Serial MIDI Out (MIDI OUT 1)', portPrefix: 0x05},
 		],
 		inputPorts: [
 			{name: 'SC-8850 Serial MIDI In (TG)',        portPrefix: 0x01},
@@ -119,13 +119,13 @@ const devices = Object.freeze([
 		mfrName: 'Roland ED', deviceName: 'SC-8820',
 		mfrId: [0x41], deviceFamily: [0x42, 0x00], deviceFamilyMember: [0x00, 0x07], softwareRevision: [0x00, 0x00, 0x00, 0x00],
 		outputPorts: [
-			{name: 'SC-8820 Serial MIDI Out (Port-A)'},
-			{name: 'SC-8820 Serial MIDI Out (Port-B)'},
-			{name: 'SC-8820 Serial MIDI Out (MIDI OUT)'},
+			{name: 'SC-8820 Serial MIDI Out (Port-A)',   portPrefix: 0x01},
+			{name: 'SC-8820 Serial MIDI Out (Port-B)',   portPrefix: 0x02},
+			{name: 'SC-8820 Serial MIDI Out (MIDI OUT)', portPrefix: 0x05},
 		],
 		inputPorts: [
 			{name: 'SC-8820 Serial MIDI In (TG)',      portPrefix: 0x01},
-			{name: 'SC-8820 Serial MIDI In (MIDI IN)', portPrefix: 0x03},	// Not confirmed
+			{name: 'SC-8820 Serial MIDI In (MIDI IN)', portPrefix: 0x05},
 		],
 	},
 	{
