@@ -58,6 +58,7 @@ Appendix: List of MIDI devices with serial terminal
 |--------------|-------------|-----------|-----------|---|---|---|------|
 | Roland       | SC-55mkII   |         1 |         1 | x | x | x |      |
 | Roland       | SK-50       |         1 |         1 | x | x | x |      |
+| Roland       | SC-50       |         1 |         1 | x | x | x |      |
 | Roland       | SC-55ST     |         1 |         1 | x | x | x |      |
 | Roland       | SC-7        |         1 |         1 | x | x | x |      |
 | Roland       | SC-88       |         2 |         1 | x | x | x | [^1] |
@@ -116,8 +117,7 @@ Appendix: List of MIDI devices with serial terminal
 | Roland       | KR-5            |         1 |         1 | x | x | x |
 | Roland       | KR-7            |         1 |         1 | x | x | x |
 | Roland       | KF-7            |         1 |         1 | x | x | x |
-| Roland       | KR-15           |         1 |         1 | x | x | x |
-| Roland       | KR-15/17        |         1 |         1 | x | x | x |
+| Roland       | KR-17/15        |         1 |         1 | x | x | x |
 | Roland       | MT-300S         |         1 |         1 | x | x | x |
 | Roland       | MT-300          |         1 |         1 | x | x | x |
 | Roland       | E-38            |         1 |         1 | x | x | x |
@@ -187,6 +187,8 @@ Appendix: List of MIDI devices with serial terminal
 | Yamaha       | 01V    |         1 |         1 | x | x | x |       |
 | Yamaha       | DM2000 |         8 |         8 | x | ? | x | [^10] |
 | Yamaha       | 02R96  |         8 |         8 | x | ? | x | [^10] |
+| Yamaha       | AW4416 |         1 |         1 | x | x | x |       |
+| Yamaha       | AW2816 |         1 |         1 | x | x | x |       |
 
 [^9]: 8 ports for Port 1-8 (same as MOTU MIDI Time Piece?), 1 port for Port 17, and 1 port for Port ALL. (broadcast)
 [^10]: 8 ports for Port 1-8. (same as MOTU MIDI Time Piece?)
@@ -197,6 +199,7 @@ Appendix: List of MIDI devices with serial terminal
 |--------------|---------------|-----------|-----------|---|---|---|
 | Yamaha       | PSR-730/630   |         1 |         1 | x | x | x |
 | Yamaha       | PSR-530/B50   |         1 |         1 | x | x | x |
+| Yamaha       | KB-410        |         1 |         1 | x | x | x |
 | Yamaha       | PSR-8000      |         1 |         1 | x | x | x |
 | Yamaha       | PSR-740/640   |         1 |         1 | x | x | x |
 | Yamaha       | PSR-540       |         1 |         1 | x | x | x |
@@ -228,13 +231,16 @@ Appendix: List of MIDI devices with serial terminal
 | Yamaha       | CLP-920                 |         1 |         1 | x | x | x |
 | Yamaha       | YDP-321                 |         1 |         1 | x | x | x |
 | Yamaha       | J-5000                  |         1 |         1 | x | x | x |
-| Yamaha       | CLP-990/990M            |         1 |         1 | x | x | x |
-| Yamaha       | CLP-970/970C            |         1 |         1 | x | x | x |
+| Yamaha       | CLP-990                 |         1 |         1 | x | x | x |
+| Yamaha       | CLP-970/CWP-1           |         1 |         1 | x | x | x |
 | Yamaha       | CVP-201                 |         1 |         1 | x | x | x |
+| Yamaha       | CLP-910                 |         1 |         1 | x | x | x |
 | Yamaha       | CLP-170/150             |         1 |         1 | x |   | x |
 | Yamaha       | P-120/120S              |         1 |         1 | x | x | x |
 | Yamaha       | CLP-130                 |         1 |         1 | x | x | x |
 | Yamaha       | CVP-209/207/205/203     |         1 |         1 | x | x | x |
+| Yamaha       | PF-1000                 |         1 |         1 | x | x | x |
+| Yamaha       | PF-500                  |         1 |         1 | x | x | x |
 | Yamaha       | YDP-223                 |         1 |         1 | x | x | x |
 | Yamaha       | P-250                   |         1 |         1 | x |   | x |
 | Yamaha       | CVP-202                 |         1 |         1 | x | x | x |
