@@ -4,7 +4,7 @@ web-serial-midi
 What is this?
 -------------
 
-This module provides APIs (with [Web MIDI API](https://www.w3.org/TR/webmidi/)-like I/F) to control MIDI sound modules with serial port terminal by using [Web Serial API](https://wicg.github.io/serial/).
+This module provides APIs (with [Web MIDI API](https://www.w3.org/TR/webmidi)-like I/F) to control MIDI sound modules with serial port terminal by using [Web Serial API](https://wicg.github.io/serial).
 
 A moment of time in the past, before the widespread of USB for MIDI devices, some MIDI modules had Mini-DIN-8 "serial terminal" for connection to computers. Those serial ports can be used as both MIDI IN and OUT. (Since MIDI and serial communication methods are very similar, a method of direct connection between MIDI sound module to computer's RS-232C/422 terminal was devised to drive them.) This module's APIs can drive such MIDI devices with serial terminal.
 
@@ -14,7 +14,7 @@ API
 
 ### prepareForSerialMidi
 
-Sets up a serial port for MIDI. This API calls [serial.requestPort](https://wicg.github.io/serial/#requestport-method) to prompt the user to choose a port. Due to the restriction of this API, it must be triggered by user interaction, such as clicking a button.
+Sets up a serial port for MIDI. This API calls [serial.requestPort](https://wicg.github.io/serial#requestport-method) to prompt the user to choose a port. Due to the restriction of this API, it must be triggered by user interaction, such as clicking a button.
 
 After resolved the returned promise successfully, the promise returned by `requestMIDIAccess` can be settled.
 
@@ -24,7 +24,7 @@ After resolved the returned promise successfully, the promise returned by `reque
 
 #### Arguments
 
-* `settings`: The following properties are passed as options of `SerialPort.open([options])`: [*](https://wicg.github.io/serial/#dom-serialoptions)
+* `settings`: The following properties are passed as options of `SerialPort.open([options])`: [*](https://wicg.github.io/serial#dom-serialoptions)
 	* `baudRate`: `31250` or `38400` should be specified.
 	* `flowControl`: `none` or `hardware` shall be specified.
 	* `bufferSize`: More than 0.
@@ -476,6 +476,12 @@ Appendix: List of MIDI devices with serial terminal
 | Generalmusic | RP220               |         1 |         1 | x |   | x |
 | Generalmusic | GPS3600/2600/PS2600 |         1 |         1 | x |   | x |
 | Generalmusic | WK1                 |         1 |         1 | x |   | x |
+
+### LG Electronics (GoldStar): Sound modules
+
+| Manufacturer   | Name    | Ports (O) | Ports (I) | I | N | M |
+|----------------|---------|-----------|-----------|---|---|---|
+| LG Electronics | GS1000R |         1 |         1 | x | ? | x |
 
 
 License
